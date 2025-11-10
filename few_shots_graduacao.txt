@@ -1,0 +1,451 @@
+---course
+articleId: FS-GRA-001
+nomeCurso: Few-shot (Graduação) — Duração
+formatoName: RAG-Fewshot
+url: https://www.sp.senac.br/graduacao
+synonyms: ["tempo do curso", "carga horária", "duração"]
+---
+<<<SECTION:objetivoComercial>>>
+- Responder duração e modalidade usando dados do curso de graduação.
+- Priorizar toDisplay.modalidadeSecundariaDuracao e toDisplay.formatoName.
+- Sempre incluir a página oficial absoluta (url).
+<<<END_SECTION>>>
+<<<SECTION:oqueVouAprender:1>>>
+User: Quanto tempo dura {nomeCurso}?
+<<<END_SECTION>>>
+<<<SECTION:comoVouAprender>>>
+- Recuperar {modalidadeSecundariaDuracao} e {formatoName} do curso.
+- Converter {url} em absoluta se vier relativa.
+- Não inventar dados; responder curto e direto.
+<<<END_SECTION>>>
+<<<SECTION:possoFazerEsseCurso>>>
+Assistant: Duração: {modalidadeSecundariaDuracao}. Modalidade: {formatoName}. Página: {url}.
+<<<END_SECTION>>>
+=== END_COURSE ===
+
+---course
+articleId: FS-GRA-002
+nomeCurso: Few-shot (Graduação) — Modalidade
+formatoName: RAG-Fewshot
+url: https://www.sp.senac.br/graduacao
+synonyms: ["presencial", "EAD", "modalidade"]
+---
+<<<SECTION:objetivoComercial>>>
+- Informar modalidade (Presencial/EAD) de forma objetiva.
+- Incluir link para detalhes de turmas e unidades.
+<<<END_SECTION>>>
+<<<SECTION:oqueVouAprender:1>>>
+User: É presencial ou EAD?
+<<<END_SECTION>>>
+<<<SECTION:comoVouAprender>>>
+- Recuperar {formatoName}.
+- Usar {url} absoluta para detalhes.
+<<<END_SECTION>>>
+<<<SECTION:possoFazerEsseCurso>>>
+Assistant: Modalidade: {formatoName}. Detalhes de turmas e unidades: {url}.
+<<<END_SECTION>>>
+=== END_COURSE ===
+
+---course
+articleId: FS-GRA-003
+nomeCurso: Few-shot (Graduação) — Grau/Tipo
+formatoName: RAG-Fewshot
+url: https://www.sp.senac.br/graduacao
+synonyms: ["grau", "tipo do curso", "Bacharelado", "Licenciatura", "Tecnólogo"]
+---
+<<<SECTION:objetivoComercial>>>
+- Esclarecer o grau/tipo do curso (Bacharelado, Licenciatura, Tecnólogo).
+- Incluir link para informações completas.
+<<<END_SECTION>>>
+<<<SECTION:oqueVouAprender:1>>>
+User: Esse curso é Bacharelado, Licenciatura ou Tecnólogo?
+<<<END_SECTION>>>
+<<<SECTION:comoVouAprender>>>
+- Recuperar {tipoName}.
+- Incluir {url} absoluta.
+<<<END_SECTION>>>
+<<<SECTION:possoFazerEsseCurso>>>
+Assistant: Grau/tipo: {tipoName}. Informações completas: {url}.
+<<<END_SECTION>>>
+=== END_COURSE ===
+
+---course
+articleId: FS-GRA-004
+nomeCurso: Few-shot (Graduação) — O que vou aprender (resumo)
+formatoName: RAG-Fewshot
+url: https://www.sp.senac.br/graduacao
+synonyms: ["o que vou aprender", "conteúdo resumo", "temas principais"]
+---
+<<<SECTION:objetivoComercial>>>
+- Resumir 3 tópicos principais do conteúdo.
+- Usar seções de conteúdo; manter resposta curta.
+<<<END_SECTION>>>
+<<<SECTION:oqueVouAprender:1>>>
+User: O que eu vou aprender em {nomeCurso}?
+<<<END_SECTION>>>
+<<<SECTION:comoVouAprender>>>
+- Selecionar {tópico1..3} de trechos relevantes do conteúdo.
+- Concluir com {url} para a grade completa.
+<<<END_SECTION>>>
+<<<SECTION:possoFazerEsseCurso>>>
+Assistant: Você verá: {tópico1}; {tópico2}; {tópico3}. Grade completa e demais tópicos: {url}.
+<<<END_SECTION>>>
+=== END_COURSE ===
+
+---course
+articleId: FS-GRA-005
+nomeCurso: Few-shot (Graduação) — O que vou aprender (consolidação)
+formatoName: RAG-Fewshot
+url: https://www.sp.senac.br/graduacao
+synonyms: ["principais matérias", "consolidação", "tópicos"]
+---
+<<<SECTION:objetivoComercial>>>
+- Listar principais conteúdos consolidados de múltiplas partes.
+- Direcionar para a lista completa.
+<<<END_SECTION>>>
+<<<SECTION:oqueVouAprender:1>>>
+User: Lista as principais matérias de {nomeCurso}.
+<<<END_SECTION>>>
+<<<SECTION:comoVouAprender>>>
+- Consolidar 3–4 tópicos de maior relevância.
+- Apontar {url} para a lista completa (partes 1..n).
+<<<END_SECTION>>>
+<<<SECTION:possoFazerEsseCurso>>>
+Assistant: Principais conteúdos: {tópico1}; {tópico2}; {tópico3}; {tópico4}. Para a lista completa (partes 1..n): {url}.
+<<<END_SECTION>>>
+=== END_COURSE ===
+
+---course
+articleId: FS-GRA-006
+nomeCurso: Few-shot (Graduação) — Metodologia
+formatoName: RAG-Fewshot
+url: https://www.sp.senac.br/graduacao
+synonyms: ["metodologia", "como vou aprender", "aulas"]
+---
+<<<SECTION:objetivoComercial>>>
+- Explicar metodologia do curso, sucinto.
+- Encaminhar para detalhes (laboratórios/plataforma).
+<<<END_SECTION>>>
+<<<SECTION:oqueVouAprender:1>>>
+User: Como funciona a metodologia do curso?
+<<<END_SECTION>>>
+<<<SECTION:comoVouAprender>>>
+- Resumir {comoVouAprender_resumo} em 1 linha.
+- Fechar com {url} para detalhes de práticas, labs e plataforma.
+<<<END_SECTION>>>
+<<<SECTION:possoFazerEsseCurso>>>
+Assistant: Metodologia: {comoVouAprender_resumo}. Detalhes de práticas, laboratórios e plataforma: {url}.
+<<<END_SECTION>>>
+=== END_COURSE ===
+
+---course
+articleId: FS-GRA-007
+nomeCurso: Few-shot (Graduação) — Requisitos
+formatoName: RAG-Fewshot
+url: https://www.sp.senac.br/graduacao
+synonyms: ["pré-requisitos", "requisitos", "posso fazer"]
+---
+<<<SECTION:objetivoComercial>>>
+- Resumir requisitos/elegibilidade em 1 linha.
+- Encaminhar para documentos e exceções.
+<<<END_SECTION>>>
+<<<SECTION:oqueVouAprender:1>>>
+User: Posso fazer {nomeCurso}? Quais os requisitos?
+<<<END_SECTION>>>
+<<<SECTION:comoVouAprender>>>
+- Extrair {possoFazerEsseCurso_resumo} e incluir {url}.
+<<<END_SECTION>>>
+<<<SECTION:possoFazerEsseCurso>>>
+Assistant: Requisitos: {possoFazerEsseCurso_resumo}. Documentos e exceções: {url}.
+<<<END_SECTION>>>
+=== END_COURSE ===
+
+---course
+articleId: FS-GRA-008
+nomeCurso: Few-shot (Graduação) — Inscrições
+formatoName: RAG-Fewshot
+url: https://www.sp.senac.br/graduacao
+synonyms: ["inscrição", "matrícula", "inscrever"]
+---
+<<<SECTION:objetivoComercial>>>
+- Direcionar o usuário à página oficial do curso.
+<<<END_SECTION>>>
+<<<SECTION:oqueVouAprender:1>>>
+User: Onde faço a inscrição?
+<<<END_SECTION>>>
+<<<SECTION:comoVouAprender>>>
+- Retornar somente o link oficial {url} do curso.
+<<<END_SECTION>>>
+<<<SECTION:possoFazerEsseCurso>>>
+Assistant: A inscrição é pela página oficial do curso: {url}.
+<<<END_SECTION>>>
+=== END_COURSE ===
+
+---course
+articleId: FS-GRA-009
+nomeCurso: Few-shot (Graduação) — Lacuna: preço
+formatoName: RAG-Fewshot
+url: https://www.sp.senac.br/graduacao
+synonyms: ["preço", "valor", "mensalidade"]
+---
+<<<SECTION:objetivoComercial>>>
+- Declarar lacuna quando preço não constar no contexto; apontar para {url}.
+<<<END_SECTION>>>
+<<<SECTION:oqueVouAprender:1>>>
+User: Qual o preço de {nomeCurso}?
+<<<END_SECTION>>>
+<<<SECTION:comoVouAprender>>>
+- Verificar contexto; se ausente, responder lacuna + {url}.
+<<<END_SECTION>>>
+<<<SECTION:possoFazerEsseCurso>>>
+Assistant: Preço não consta no contexto. Consulte valores e condições em: {url}.
+<<<END_SECTION>>>
+=== END_COURSE ===
+
+---course
+articleId: FS-GRA-010
+nomeCurso: Few-shot (Graduação) — Lacuna: datas
+formatoName: RAG-Fewshot
+url: https://www.sp.senac.br/graduacao
+synonyms: ["datas", "início", "próxima turma"]
+---
+<<<SECTION:objetivoComercial>>>
+- Declarar lacuna quando datas não constarem; apontar {url}.
+<<<END_SECTION>>>
+<<<SECTION:oqueVouAprender:1>>>
+User: Quando começa a próxima turma?
+<<<END_SECTION>>>
+<<<SECTION:comoVouAprender>>>
+- Se não houver datas, responder lacuna + caminho para turmas em {url}.
+<<<END_SECTION>>>
+<<<SECTION:possoFazerEsseCurso>>>
+Assistant: Datas específicas não constam no contexto. Verifique turmas e prazos em: {url}.
+<<<END_SECTION>>>
+=== END_COURSE ===
+
+---course
+articleId: FS-GRA-011
+nomeCurso: Few-shot (Graduação) — Lacuna: docentes
+formatoName: RAG-Fewshot
+url: https://www.sp.senac.br/graduacao
+synonyms: ["docentes", "professores", "corpo docente"]
+---
+<<<SECTION:objetivoComercial>>>
+- Declarar lacuna sobre docentes e encaminhar para a página do curso.
+<<<END_SECTION>>>
+<<<SECTION:oqueVouAprender:1>>>
+User: Quem são os professores?
+<<<END_SECTION>>>
+<<<SECTION:comoVouAprender>>>
+- Se ausente, retornar lacuna e link oficial do curso {url}.
+<<<END_SECTION>>>
+<<<SECTION:possoFazerEsseCurso>>>
+Assistant: Corpo docente não consta no contexto. Confira a seção do curso: {url}.
+<<<END_SECTION>>>
+=== END_COURSE ===
+
+---course
+articleId: FS-GRA-012
+nomeCurso: Few-shot (Graduação) — Desambiguação (lista curta)
+formatoName: RAG-Fewshot
+url: https://www.sp.senac.br/graduacao
+synonyms: ["opções de curso", "lista de cursos", "desambiguação"]
+---
+<<<SECTION:objetivoComercial>>>
+- Sugerir 2–3 opções com nome, formato e duração; pedir confirmação do nome.
+<<<END_SECTION>>>
+<<<SECTION:oqueVouAprender:1>>>
+User: Quero fazer TI, mas não sei qual curso.
+<<<END_SECTION>>>
+<<<SECTION:comoVouAprender>>>
+- Filtrar por palavra-chave (ex.: TI) e listar top 3 opções com {nome, formato, duração}.
+<<<END_SECTION>>>
+<<<SECTION:possoFazerEsseCurso>>>
+Assistant: Encontrei opções: 1) {nome1} — {formato1}, {dur1}; 2) {nome2} — {formato2}, {dur2}; 3) {nome3} — {formato3}, {dur3}. Diga o nome exato para detalhar.
+<<<END_SECTION>>>
+=== END_COURSE ===
+
+---course
+articleId: FS-GRA-013
+nomeCurso: Few-shot (Graduação) — Desambiguação (nenhuma)
+formatoName: RAG-Fewshot
+url: https://www.sp.senac.br/graduacao
+synonyms: ["não encontrado", "curso inexistente", "sem correspondência"]
+---
+<<<SECTION:objetivoComercial>>>
+- Tratar ausência de correspondência; solicitar nome exato ou palavra-chave; apontar catálogo geral.
+<<<END_SECTION>>>
+<<<SECTION:oqueVouAprender:1>>>
+User: Quero detalhes de {nomeCursoInexistente}.
+<<<END_SECTION>>>
+<<<SECTION:comoVouAprender>>>
+- Responder ausência e apontar {url_geral} do catálogo.
+<<<END_SECTION>>>
+<<<SECTION:possoFazerEsseCurso>>>
+Assistant: O contexto não trouxe esse curso. Informe o nome exato ou uma palavra-chave (ex.: “Software”, “Design”) para eu buscar. Catálogo: {url_geral}.
+<<<END_SECTION>>>
+=== END_COURSE ===
+
+---course
+articleId: FS-GRA-014
+nomeCurso: Few-shot (Graduação) — Catálogo: listar todos (1ª página)
+formatoName: RAG-Fewshot
+url: https://www.sp.senac.br/graduacao
+synonyms: ["catálogo", "todos os cursos", "lista completa"]
+---
+<<<SECTION:objetivoComercial>>>
+- Listar cursos via catalogIndex, paginando 1–25.
+- Formato de linha: nome — formato, duração (url).
+<<<END_SECTION>>>
+<<<SECTION:oqueVouAprender:1>>>
+User: Liste todos os cursos de graduação.
+<<<END_SECTION>>>
+<<<SECTION:comoVouAprender>>>
+- Usar catalogIndex; montar 25 linhas respeitando o formato; informar N total.
+<<<END_SECTION>>>
+<<<SECTION:possoFazerEsseCurso>>>
+Assistant: Exibindo 1–25 de {N} cursos:\n{linhas_catalogo_1_25}\nPara ver mais, diga “próxima página”.
+<<<END_SECTION>>>
+=== END_COURSE ===
+
+---course
+articleId: FS-GRA-015
+nomeCurso: Few-shot (Graduação) — Catálogo: próxima página
+formatoName: RAG-Fewshot
+url: https://www.sp.senac.br/graduacao
+synonyms: ["catálogo próxima", "página seguinte", "paginação"]
+---
+<<<SECTION:objetivoComercial>>>
+- Retornar a próxima janela do catalogIndex com {start}–{end} e N total.
+<<<END_SECTION>>>
+<<<SECTION:oqueVouAprender:1>>>
+User: Próxima página.
+<<<END_SECTION>>>
+<<<SECTION:comoVouAprender>>>
+- Calcular intervalo e compor {linhas_catalogo_seguintes}; manter formato de linha.
+<<<END_SECTION>>>
+<<<SECTION:possoFazerEsseCurso>>>
+Assistant: Exibindo {start}–{end} de {N} cursos:\n{linhas_catalogo_seguintes}\nPara continuar, peça “próxima página”.
+<<<END_SECTION>>>
+=== END_COURSE ===
+
+---course
+articleId: FS-GRA-016
+nomeCurso: Few-shot (Graduação) — Catálogo: filtro por palavra-chave
+formatoName: RAG-Fewshot
+url: https://www.sp.senac.br/graduacao
+synonyms: ["filtro", "palavra-chave", "busca"]
+---
+<<<SECTION:objetivoComercial>>>
+- Filtrar catálogo por palavra (ex.: “engenharia”) e listar linhas no formato padrão.
+<<<END_SECTION>>>
+<<<SECTION:oqueVouAprender:1>>>
+User: Liste cursos com “engenharia”.
+<<<END_SECTION>>>
+<<<SECTION:comoVouAprender>>>
+- Filtrar {linhas_catalogo_filtradas}; informar M resultados; concluir com {url_geral}.
+<<<END_SECTION>>>
+<<<SECTION:possoFazerEsseCurso>>>
+Assistant: Encontrei {M} resultado(s):\n{linhas_catalogo_filtradas}\nLista completa e inscrições: {url_geral}.
+<<<END_SECTION>>>
+=== END_COURSE ===
+
+---course
+articleId: FS-GRA-017
+nomeCurso: Few-shot (Graduação) — Clarificação mínima
+formatoName: RAG-Fewshot
+url: https://www.sp.senac.br/graduacao
+synonyms: ["noturno", "turno", "dúvida rápida"]
+---
+<<<SECTION:objetivoComercial>>>
+- Solicitar o nome do curso quando a pergunta for genérica; apontar base geral.
+<<<END_SECTION>>>
+<<<SECTION:oqueVouAprender:1>>>
+User: Dá para fazer noturno?
+<<<END_SECTION>>>
+<<<SECTION:comoVouAprender>>>
+- Pedir curso; sugerir consultar {url_geral} para modalidades e turmas.
+<<<END_SECTION>>>
+<<<SECTION:possoFazerEsseCurso>>>
+Assistant: Para orientar melhor, preciso do nome do curso. Base geral de modalidades e turmas: {url_geral}.
+<<<END_SECTION>>>
+=== END_COURSE ===
+
+---course
+articleId: FS-GRA-018
+nomeCurso: Few-shot (Graduação) — Emoção: usuário ansioso
+formatoName: RAG-Fewshot
+url: https://www.sp.senac.br/graduacao
+synonyms: ["ansioso", "resumo rápido", "pressa"]
+---
+<<<SECTION:objetivoComercial>>>
+- Responder com empatia e objetividade; incluir 2–3 dados chave e {url}.
+<<<END_SECTION>>>
+<<<SECTION:oqueVouAprender:1>>>
+User: Tô muito perdido, resume rápido o {nomeCurso}.
+<<<END_SECTION>>>
+<<<SECTION:comoVouAprender>>>
+- Trazer {formatoName}, {modalidadeSecundariaDuracao} e 2 tópicos do conteúdo, + {url}.
+<<<END_SECTION>>>
+<<<SECTION:possoFazerEsseCurso>>>
+Assistant: Vamos por partes. Modalidade: {formatoName}. Duração: {modalidadeSecundariaDuracao}. O que você verá: {tópico1}; {tópico2}. Detalhes: {url}.
+<<<END_SECTION>>>
+=== END_COURSE ===
+
+---course
+articleId: FS-GRA-019
+nomeCurso: Few-shot (Graduação) — Emoção: usuário frustrado
+formatoName: RAG-Fewshot
+url: https://www.sp.senac.br/graduacao
+synonyms: ["frustrado", "rápido", "requisitos"]
+---
+<<<SECTION:objetivoComercial>>>
+- Responder com empatia; focar nos requisitos e link para detalhes.
+<<<END_SECTION>>>
+<<<SECTION:oqueVouAprender:1>>>
+User: Eu só quero saber se posso fazer, isso é demorado?
+<<<END_SECTION>>>
+<<<SECTION:comoVouAprender>>>
+- Trazer {possoFazerEsseCurso_resumo} e {url}; manter curto.
+<<<END_SECTION>>>
+<<<SECTION:possoFazerEsseCurso>>>
+Assistant: Entendi a pressa. Requisitos: {possoFazerEsseCurso_resumo}. Dúvidas específicas e documentos: {url}.
+<<<END_SECTION>>>
+=== END_COURSE ===
+
+---course
+articleId: FS-GRA-020
+nomeCurso: Few-shot (Graduação) — Emoção: usuário urgente
+formatoName: RAG-Fewshot
+url: https://www.sp.senac.br/graduacao
+synonyms: ["urgente", "modalidade", "resposta curta"]
+---
+<<<SECTION:objetivoComercial>>>
+- Responder modalidade de forma imediata com link para unidades/turmas.
+<<<END_SECTION>>>
+<<<SECTION:oqueVouAprender:1>>>
+User: Rápido, modalidade do {nomeCurso}.
+<<<END_SECTION>>>
+<<<SECTION:comoVouAprender>>>
+- Recuperar {formatoName} e {url}; frase única.
+<<<END_SECTION>>>
+<<<SECTION:possoFazerEsseCurso>>>
+Assistant: Modalidade: {formatoName}. Unidades e turmas: {url}.
+<<<END_SECTION>>>
+=== END_COURSE ===
+
+---course
+articleId: FS-GRA-NOTAS
+nomeCurso: Notas rápidas para pipeline (Graduação)
+formatoName: RAG-Fewshot
+url: https://www.sp.senac.br/graduacao
+---
+<<<SECTION:objetivoComercial>>>
+- Use 3 a 8 destes few-shots por chamada, antes da pergunta real.
+- Escolha exemplos que combinem com a intenção do usuário (ex.: metodologia + lacuna de datas).
+- Para listagens, garanta que o retriever traga apenas chunks catalogIndex; o modelo não deve inventar linhas fora do índice.
+- Mantenha as saídas curtas, com {url} sempre que a ação depender do site.
+<<<END_SECTION>>>
+=== END_COURSE ===
+
+
